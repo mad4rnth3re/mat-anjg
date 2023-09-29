@@ -13,6 +13,7 @@
     body{
         background-color: grey;
         margin-top: 100px;
+        font-family: Arial, Helvetica, sans-serif;
     }
     .container{
         display: flex;
@@ -46,7 +47,7 @@
         </div>
         <div class="hasil">
             <div class="ling"></div>
-            <h3 class="has"></h3>
+            <p class="has"></p>
         </div>
         <div class="submit">
             <button id="sub">Submit</button>
@@ -55,8 +56,8 @@
         <button id="back" onclick="back()">Back To Lobby</button>
         </div>
         <script>
-            const jari = document.querySelector("#jari");
-            const sub = document.querySelector("#sub");
+        const jari = document.querySelector("#jari");
+        const sub = document.querySelector("#sub");
         const res = document.querySelector("#res");
         const hasil = document.querySelector(".hasil");
         const ling = document.querySelector(".ling");
@@ -73,7 +74,7 @@
             ling.style.width = jari.value + "cm";
             ling.style.height = jari.value + "cm";
 
-            hasil.innerHTML = "<li>diameter : " + diameter + "cm</li><li> luas : " + luas + "cm2</li><li> keliling : " + keliling + "cm</li>";
+            has.innerHTML = "<li>diameter : " + diameter + "cm</li><li> luas : " + luas + "cm2</li><li> keliling : " + keliling + "cm</li>";
             
             ling.classList.add('animated');
         });
@@ -82,7 +83,7 @@
             const res = document.querySelector("#res");
 
             jari.value = "";
-            hasil.innerHTML = "";
+            has.innerHTML = "";
             ling.style.width = "0px";
             ling.style.height = "0px";
 

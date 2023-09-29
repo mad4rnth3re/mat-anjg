@@ -70,10 +70,10 @@
             let diameter = (jari * 2).toFixed(2);
             let keliling = (3.14 * diameter).toFixed(2);
             
-            ling.style.width = diameter.value + "cm";
-            ling.style.height = diameter.value + "cm";
+            ling.style.width = luas.value + "cm";
+            ling.style.height = luas.value + "cm";
 
-            hasil.innerHTML = "<li>jari : " + jari + "cm</li><li> diameter : " + diameter
+            has.innerHTML = "<li>jari : " + jari + "cm</li><li> diameter : " + diameter
                  + "cm2</li><li> keliling : " + keliling + "cm</li>";
             
             ling.classList.add('animated');
@@ -83,7 +83,7 @@
             const res = document.querySelector("#res");
 
             luas.value = "";
-            hasil.innerHTML = "";
+            has.innerHTML = "";
             ling.style.width = "0px";
             ling.style.height = "0px";
 
