@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keliling Lingkaran</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-color: grey;
+        margin-top: 100px;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+    .ling{
+        background-color: aqua;
+        border-radius: 100%;
+        transition: 1s;
+    }
+    @keyframes anim{
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 100%;
+        }
+    }
+    .animated{
+        animation: anim 1s forwards;
+    }
+</style>
+<body>
+    <div class="container">
+        <h2>circle math</h2>
+        <div class="input">
+            <input type="number" id="keliling">
+        </div>
+        <div class="hasil">
+            <div class="ling"></div>
+            <h3 class="has"></h3>
+        </div>
+        <div class="submit">
+            <button id="sub">Submit</button>
+            <button id="res">Reset</button>
+        </div>
+        <button id="back" onclick="back()">Back To Lobby</button>
+    </div>
+    <script>
+        const keliling = document.querySelector("#keliling");
+        const sub = document.querySelector("#sub");
+        const res = document.querySelector("#res");
+        const hasil = document.querySelector(".hasil");
+        const ling = document.querySelector(".ling");
+        const has = document.querySelector(".has");
+        const back = document.querySelector("#back");
+
+        sub.addEventListener("click", function(){
+            const sub = document.querySelector("#sub");
+            
+            let diameter = (parseFloat(keliling.value) / 3.14).toFixed(2);
+            let jari = (diameter / 2).toFixed(2);
+            let luas = (3.14 * jari * jari).toFixed(2);
+            
+            ling.style.width = keliling.value + "cm";
+            ling.style.height = keliling.value + "cm";
+
+            hasil.innerHTML = "<li>jari : " + jari + "cm</li><li> diameter : " + diameter
+                 + "cm2</li><li> keliling : " + luas + "cm</li>";
+            
+            ling.classList.add('animated');
+        });
+
+        res.addEventListener("click", function(){
+            const res = document.querySelector("#res");
+
+            keliling.value = "";
+            hasil.innerHTML = "";
+            ling.style.width = "0px";
+            ling.style.height = "0px";
+
+            ling.classList.remove("animated");
+        });
+
+        keliling.addEventListener("keypress", function(e){
+            if(e.key == "Enter"){
+                sub.click();
+            }
+        });
+        
+        back.addEventListener("click", function(){
+            const back = document.querySelector("#back");
+            
+            window.location.href = "lobby.html";
+        })
+    </script>
+</body>
+</html>

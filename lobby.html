@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Bagian dari lingkaran yang diketahui</h2>
+
+    <div class="inpt">
+        <button id="jar" onclick="jari()">Jari-Jari</button>
+        <button id="diam" onclick="diame()">Diameter</button>
+        <button id="lus" onclick="luas()">Luas</button>
+        <button id="kel" onclick="keliling()">Keliling</button>
+    </div>
+    
+    <script>
+        const jar = document.querySelector("#jar");
+        const diam = document.querySelector("#diam");
+        const lus = document.querySelector("#luas");
+        const kel = document.querySelector("#kel");
+
+        function jari(){
+            window.location.href = "jari.html";
+        }
+        function diame(){
+            window.location.href = "diameter.html";
+        }
+        function luas(){
+            window.location.href = "luas.html";
+        }
+        function keliling(){
+            window.location.href = "keliling.html";
+        }
+    </script>
+    </body>
+</html>
